@@ -20,7 +20,6 @@ const Routers: React.FC = () => {
       <Route path="/profile" component={Post}/>
       <Route path="/about" component={Profile}/>
       <Route path="/logout" component={Logout}/>
-
     </BrowserRouter>
   )
 }
