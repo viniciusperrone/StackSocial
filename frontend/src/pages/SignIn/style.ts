@@ -17,4 +17,15 @@ export const FormSecond = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  label{
+    margin: 10px;
+  }
+
+  button{
+    margin-top: 40px;
+  }
+  p{
+    margin-top: 15px;
+  }
 `;

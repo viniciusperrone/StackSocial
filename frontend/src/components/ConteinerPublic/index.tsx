@@ -2,11 +2,16 @@ import React from 'react';
 
 import { Conteiner } from './style';
 
-const ConteinerPublic: React.FC = ( { children } ) => {
+interface ConteinerPublicProps {
+  width: string;
+  height: string;
+}
+
+const ConteinerPublic: React.FC<ConteinerPublicProps> = ( props ) => {
   return(
     <>
-      <Conteiner>
-        { children }
+      <Conteiner width={props.width} height={props.height}>
+        { props.children }
       </Conteiner>
     </>
   )

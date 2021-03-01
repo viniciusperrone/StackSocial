@@ -27,13 +27,22 @@ export default createGlobalStyle`
   }
 
   label{
-    font: 400 2rem Rambla;
+    font: 400 2.5rem Rambla;
   }
 
   button{
     font: 400 2rem Rambla;
     border: none;
 
+  }
+
+  p{
+    font: 400 2rem Rambla;
+  }
+
+  input{
+    padding-left: 10px;
+    font: 400 2rem Rambla;  
   }
 
 

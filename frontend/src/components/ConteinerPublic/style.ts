@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
-export const Conteiner = styled.div`
-  width: 80%;
-  height: 75%;
+interface StyleProps{
+  width: string;
+  height: string;
+}
+export const Conteiner = styled.div<StyleProps>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
 
   background-color: var(--color-conteiner);
   border-radius: 20px;
