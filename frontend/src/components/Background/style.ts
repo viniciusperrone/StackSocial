@@ -5,7 +5,7 @@ interface BackgroundConteinerProps{
   alignItems: string;
 }
 export const BackgroundConteiner = styled.div<BackgroundConteinerProps>`
-  height: 100vh;
+  height: 100%;
   background-color: var(--color-background);
 
   display: flex;
