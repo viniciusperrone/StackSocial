@@ -13,7 +13,7 @@ const SignIn: React.FC = () => {
   const space = " ";
   return(
     <>
-      <Background>
+      <Background justifyContent="center" alignItems="center">
         <ConteinerPublic width="80%" height="75%">
           <FormFirst >
             <ConteinerImage />
@@ -21,9 +21,9 @@ const SignIn: React.FC = () => {
           <FormSecond>
             <h1>Sign In</h1>
             <label>username</label>
-            <Input />
+            <Input type="none"/>
             <label>password</label>
-            <Input />
+            <Input type="password"/>
             <Button>
               Login
             </Button>

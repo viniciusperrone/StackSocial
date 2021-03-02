@@ -1,9 +1,15 @@
 import React from 'react';
 
+import Background from '../../components/Background';
+import Header from '../../components/Header';
+
 const Post: React.FC = () => {
   return(
     <>
-      <div>Post</div>
+      <Background justifyContent="none" alignItems="none">
+        <Header />
+        Post
+      </Background>
     </>
   )
 }

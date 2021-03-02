@@ -16,9 +16,9 @@ const Routers: React.FC = () => {
       <Route path="/" exact component={SignIn}/>
       <Route path="/signup" component={SignUp}/>
       <Route path="/dashboard"component={Dashboard}/>
-      <Route path="/post" component={About}/>
-      <Route path="/profile" component={Post}/>
-      <Route path="/about" component={Profile}/>
+      <Route path="/post" component={Post}/>
+      <Route path="/profile" component={Profile}/>
+      <Route path="/about" component={About}/>
       <Route path="/logout" component={Logout}/>
     </BrowserRouter>
   )

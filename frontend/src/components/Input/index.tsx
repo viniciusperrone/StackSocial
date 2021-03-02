@@ -2,6 +2,9 @@ import React from 'react';
 
 import { InputMain} from './style';
 
-const Input: React.FC = () => <InputMain />
+interface InputProps{
+  type: string;
+}
+const Input: React.FC<InputProps> = ( props ) => <InputMain type={props.type}/>
 
 export default Input;

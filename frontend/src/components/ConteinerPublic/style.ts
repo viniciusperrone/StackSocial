@@ -11,6 +11,9 @@ export const Conteiner = styled.div<StyleProps>`
   background-color: var(--color-conteiner);
   border-radius: 20px;
 
+  align-self: center;
+  justify-self: center;
+
   display: flex;
   flex-direction: row;
 

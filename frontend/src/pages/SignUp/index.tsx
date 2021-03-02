@@ -13,18 +13,18 @@ const SignUp: React.FC = () => {
   const space = " ";
   return(
     <>
-      <Background>
+      <Background justifyContent="center" alignItems="center">
         <ConteinerPublic width="80%" height="90%">
           <FormFirst >
             <h1>Sign Up</h1>
             <label>username</label>
-            <Input />
+            <Input type="none"/>
             <label>email</label>
-            <Input />
+            <Input type="none"/>
             <label>password</label>
-            <Input />
+            <Input type="password"/>
             <label>confirm</label>
-            <Input />
+            <Input type="password"/>
             <Button>
               Create
             </Button>

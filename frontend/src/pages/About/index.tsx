@@ -1,9 +1,16 @@
 import React from 'react';
 
+import Background from '../../components/Background';
+import Header from '../../components/Header';
+
+
 const About: React.FC = () => {
   return(
     <>
-      <div>About</div>
+      <Background justifyContent="none" alignItems="none">
+      <Header />
+      About
+      </Background>
     </>
   )
 }

@@ -1,9 +1,15 @@
 import React from 'react';
 
+import Background from '../../components/Background';
+import Header from '../../components/Header';
+
 const Logout: React.FC = () => {
   return(
     <>
-      <div>Logout</div>
+      <Background justifyContent="none" alignItems="none">
+        <Header />
+        Logout
+      </Background>
     </>
   )
 }
