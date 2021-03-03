@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import UserProfile from '../../assets/images/UserProfile.svg';
+import UserProfile from '../../assets/images/profile.svg';
 import { Conteiner, Content, HeaderContent, BodyContent } from './style';
 
 const Profile: React.FC = () => {
