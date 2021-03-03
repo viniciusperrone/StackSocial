@@ -20,7 +20,7 @@ export const FormFirst = styled.div`
     margin-top: 15px;
   }
 
-  @media screen and (min-width: 320px) and (max-width: 568px){
+  @media only screen and (min-width: 320px) and (max-width: 568px) {
     width: 100%;
     height: 100%;
 
@@ -48,6 +48,8 @@ export const FormFirst = styled.div`
       width: 200px;
     }
   }
+
+  
 `;
 
 export const FormSecond = styled.form`
@@ -58,7 +60,7 @@ export const FormSecond = styled.form`
   justify-content: center;
   align-items: center;
 
-  @media screen and (min-width: 320px) and (max-width: 568px){
+  @media only screen and (min-width: 320px) and (max-width: 568px){
     width: 0;
     height: 0;
     

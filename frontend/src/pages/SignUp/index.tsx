@@ -18,13 +18,21 @@ const SignUp: React.FC = () => {
           <FormFirst >
             <h1>Sign Up</h1>
             <label>username</label>
-            <Input type="none"/>
+            <Input 
+              type="text"
+            />
             <label>email</label>
-            <Input type="none"/>
+            <Input 
+              type="text"
+            />
             <label>password</label>
-            <Input type="password"/>
+            <Input 
+              type="password"
+            />
             <label>confirm</label>
-            <Input type="password"/>
+            <Input 
+              type="password"
+            />
             <Button>
               Create
             </Button>

@@ -11,6 +11,50 @@ export const Card = styled.div`
   display: flex;
 
   margin-top: 30px;
+
+  @media only screen and (min-width: 320px) and (max-width: 568px) {
+    width: 95%;
+    height: 60px;
+
+    div > img {
+      width: 40px;
+      height: 40px; 
+    }
+
+    div > header {
+      width: 100%;
+      height: 30%;
+
+      display: flex;
+
+      align-items: center;
+
+      h1{
+        font: 400 1.25rem Sarala;
+        color: #3BA2E3;
+      }
+
+      p{
+        font: 400 1.25rem Rambla;
+        margin-left: 5px;
+        color: #707070;
+      }
+    }
+
+    div > div {
+      h1{
+        font: 400 1.25rem Sarala;
+        color: #3BA2E3;
+        margin-left: 10px;
+      }
+
+      p{
+        font: 400 1rem Rambla;
+        color: #707070;
+        margin-left: 10px;
+      }
+    }
+  }
 `;
 
 export const Profile = styled.div`
@@ -35,7 +79,7 @@ export const Content = styled.div`
 
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
   width: 100%;
   height: 30%;
 

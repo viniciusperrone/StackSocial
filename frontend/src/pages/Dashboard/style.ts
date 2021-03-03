@@ -14,4 +14,9 @@ export const Conteiner = styled.div`
   justify-content: flex-start;
   align-items: center;
 
+  @media only screen and (min-width: 320px) and (max-width: 568px){
+    width: 100%;
+    height: 87.5%;
+  }
+
 `;

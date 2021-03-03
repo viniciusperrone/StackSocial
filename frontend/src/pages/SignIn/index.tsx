@@ -21,7 +21,7 @@ const SignIn: React.FC = () => {
           <FormSecond>
             <h1>Sign In</h1>
             <label>username</label>
-            <Input type="none"/>
+            <Input type="text"/>
             <label>password</label>
             <Input type="password"/>
             <Button>

@@ -23,4 +23,17 @@ export const HeaderConteiner = styled.header`
     }
   }
 
+  @media only screen and (min-width: 320px) and (max-width: 568px){
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+
+    h1{
+      font: 400 1.25rem Sarala;
+    }
+
+
+  }
+
 `;

@@ -26,9 +26,9 @@ const Profile: React.FC = () => {
               <h1>User Info</h1>
               <hr />
               <h1>Username</h1>
-              <Input type="text" />
+              <Input type="text"/>
               <h1>Email</h1>
-              <Input type="text" />
+              <Input type="text"/>
               <Button>Update</Button>
             </BodyContent>
           </Content>
