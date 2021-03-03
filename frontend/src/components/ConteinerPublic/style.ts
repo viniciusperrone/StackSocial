@@ -19,4 +19,12 @@ export const Conteiner = styled.div<StyleProps>`
 
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 320px) and (max-width: 568px){
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
+
+    background-color: var(--color-conteiner);
+    border-radius: 20px;
+  }
 `;

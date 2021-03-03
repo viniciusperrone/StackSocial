@@ -15,7 +15,6 @@ const Dashboard: React.FC = () => {
         <Conteiner>
           <PostCard />
         </Conteiner>
-        {/* <Footer /> */}
       </Background>
     </>
   )
