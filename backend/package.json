@@ -15,6 +15,7 @@
   "dependencies": {
     "@types/knex": "^0.16.1",
     "knex": "^0.95.1",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "uuid": "^8.3.2"
   }
 }

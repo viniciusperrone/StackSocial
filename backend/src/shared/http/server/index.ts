@@ -5,6 +5,7 @@ import RouterPrivate from '../routers/private';
 
 const app = express();
 
+app.use(express.json());
 app.use('/', RouterPublic);
 app.use('/', RouterPrivate);
 

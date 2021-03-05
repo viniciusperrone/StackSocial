@@ -4,13 +4,14 @@ const router = Router();
 
 router.get('/', (req, res) => {
   return res.json({
-    "router": "login"
-  });
+    "message": "page signin"
+  })
 });
 
-router.get('/signup', (req, res) => {
+router.post('/signup', (req, res) => {
+
   return res.json({
-    "router": "register"
+    "message": "page signup"
   });
 });
 
