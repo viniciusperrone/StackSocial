@@ -13,6 +13,12 @@ export const Conteiner = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media only screen and (min-width: 320px) and (max-width: 568px){
+    width: 100%;
+    height: 100%;
+
+  } 
+
 `;
 
 export const Content = styled.div`
@@ -23,9 +29,34 @@ export const Content = styled.div`
 
   border-radius: 30px;
 
+  @media only screen and (min-width: 320px) and (max-width: 568px){
+    width: 90%;
+    height: 80%;
+
+    header{
+
+      justify-content: center;
+      align-items: center;
+
+      img{
+        width: 130px;
+        height: 75px;
+      }
+
+      div > h1{
+        font: 400 2.25rem Sarala;
+      }
+
+      div > p{
+        font: 400 1.5rem Rambla;
+      }
+    }
+
+  }
+
 `;
 
-export const HeaderContent = styled.div`
+export const HeaderContent = styled.header`
   width: 100%;
   height: 30%;
 
@@ -71,5 +102,24 @@ export const BodyContent = styled.div`
   button{
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 568px){
+    
+    hr{
+      margin-bottom: 10px;
+    }
+    h1{
+      font: 400 2.25rem Sarala;
+    }
+    
+    input{
+      width: 70%;
+      height: 12.5%;
+    }
+
+    button{
+      width: 70%;
+    }
   }
 `;

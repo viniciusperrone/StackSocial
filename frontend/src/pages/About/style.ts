@@ -28,7 +28,7 @@ export const Content = styled.div`
 
   @media only screen and (min-width:320px) and (max-width: 568px) {
     width: 100%;
-    height: 87.5%;
+    height: 100%;
 
     background-color: var(--color-conteiner);
 
