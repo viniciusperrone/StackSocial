@@ -9,6 +9,9 @@ export async function up(knex: Knex){
       .notNullable()
       .references('id')
       .inTable('users')
+    table.string('user_name').notNullable();
+    table.date('date_post').notNullable();
+      
   })
 }
 
