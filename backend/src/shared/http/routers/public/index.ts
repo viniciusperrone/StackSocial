@@ -1,18 +1,13 @@
 import { Router } from 'express';
 
+import { UserController } from '../../../../controllers/UserController';
+
 const router = Router();
 
-router.get('/', (req, res) => {
-  return res.json({
-    "message": "page signin"
-  })
-});
+const userController = new UserController();
 
-router.post('/signup', (req, res) => {
+router.post('/', userController.show);
 
-  return res.json({
-    "message": "page signup"
-  });
-});
+router.post('/signup', userController.create);
 
 export default router;

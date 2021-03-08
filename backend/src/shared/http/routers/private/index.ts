@@ -1,24 +1,18 @@
 import { Router } from 'express';
 
+import { PostController } from '../../../../controllers/PostController';
+import { UserController } from '../../../../controllers/UserController';
 const router = Router();
 
-router.get('/dashboard', (req, res) => {
-  return res.json({
-    "router": "dashboard"
-  });
-});
+const postController = new PostController();
+const userController = new UserController();
+router.get('/dashboard', postController.getPost);
 
-router.get('/post', (req, res) => {
-  return res.json({
-    "router": "post"
-  });
-});
+// http://localhost:3333/post?id=1
 
-router.get('/profile', (req, res) => {
-  return res.json({
-    "router": "profile"
-  });
-});
+router.post('/post', postController.create);
+
+router.put('/profile/:id', userController.update);
 
 router.get('/about', (req, res) => {
   return res.json({

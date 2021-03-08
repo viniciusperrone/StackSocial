@@ -8,26 +8,24 @@ interface ModalProps{
 
 const Modal: React.FC<ModalProps> = (props) => {
   return(
-    <div style={{ display: `flex`, justifyContent: `center`, alignItems: `center` }}>
-        <div style={{
-          transform: props.show ? 'translateY(0vh)' : 'translateY(-100vh)',
-          opacity: props.show ? '1' : '0'
-        }}>
-          <div>
-            <p>Fundação Matias Machline</p>
-            <span  onClick={() => props.closedModalHandler()}><b>X</b></span>
-          </div>
-          
-          <div>
-            <div>
-              <p>{ props.message }</p>
-            </div>
-            <div>
-              <button onClick={() => props.closedModalHandler()}>Salvar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <>
+      <Wrapper>
+        <Header>
+          <p>Welcome to Our Site</p>
+          <span>X</span>
+        </Header>
+        <Content>
+          <Body>
+            <h1>Modal</h1>
+            <p> knmrvkinerneribpertnbtinent </p>
+          </Body>
+          <Footer>
+            <button>Close</button>
+          </Footer>
+        </Content>
+     </Wrapper>
+    </>
+    
   )
 }
 
