@@ -12,6 +12,8 @@ router.get('/dashboard', postController.getPost);
 
 router.post('/post', postController.create);
 
+router.put('/post/update/', postController.update);
+
 router.put('/profile/:id', userController.update);
 
 router.get('/about', (req, res) => {

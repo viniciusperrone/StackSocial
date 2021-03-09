@@ -56,7 +56,42 @@ class PostController{
   async getPost(request: Request, response: Response){
     const posts = await knex('posts').select(["title","content","user_name","date_post"]);
 
-    return response.json(posts);
+    return response.json(posts); 
+  }
+
+  async update(request: Request, response: Response){
+    const {
+      id_user,
+      id_post
+    } = request.query;
+
+    const{
+      title,
+      content
+    } = request.body;
+
+    const post = await knex('posts').where({id: id_post, user_id: id_user}).first();
+
+    const postUpdate = {
+      title: title,
+      content: content
+    }
+
+    const updatePost = await knex('posts').where({id: id_post}).update(postUpdate);
+    response.json([
+      post,
+      updatePost
+    ]);
+  }
+
+  async drop(request: Request, response: Response){
+    const {
+      id
+    } = request.body;
+
+    const deletePost = await knex('posts').where({id: id}).delete();
+
+    response.json(deletePost);
   }
 }
 
