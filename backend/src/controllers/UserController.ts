@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { hash, compare } from 'bcryptjs';
+import { sign } from 'jsonwebtoken';
 
 import knex from '../database/connection';
 
@@ -48,12 +49,15 @@ class UserController{
     }
     const comparePassord = await compare(password, user.password);
 
-    const sign = comparePassord 
+    const signIn = comparePassord 
     ? user 
     : response.status(400).json({ message: 'Credentials not found.' }); 
 
-
-    return response.json(sign);
+    const token = sign({}, '4c95c58d487d92eaec255ac392ec949b', {
+      subject: String(user.id),
+      expiresIn: '2d'
+    });
+    return response.json({ user, token });
   }
 
   async getUsers(request: Request, response: Response){
