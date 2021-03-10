@@ -4,6 +4,8 @@ import { sign } from 'jsonwebtoken';
 
 import knex from '../database/connection';
 
+import authConfig from '../token';
+
 class UserController{
   async create(request: Request, response: Response){
     const{
@@ -53,9 +55,9 @@ class UserController{
     ? user 
     : response.status(400).json({ message: 'Credentials not found.' }); 
 
-    const token = sign({}, '4c95c58d487d92eaec255ac392ec949b', {
+    const token = sign({}, authConfig.jwt.secret, {
       subject: String(user.id),
-      expiresIn: '2d'
+      expiresIn: authConfig.jwt.expiresIn
     });
     return response.json({ user, token });
   }

@@ -4,6 +4,9 @@ import { celebrate, Joi } from 'celebrate';
 
 import { PostController } from '../../../../controllers/PostController';
 import { UserController } from '../../../../controllers/UserController';
+
+import isAuthenticated from '../../../../middlewares/isAuthenticated';
+
 const router = Router();
 
 const postController = new PostController();
@@ -11,6 +14,8 @@ const userController = new UserController();
 router.get('/dashboard', postController.getPost);
 
 // http://localhost:3333/post?id=1
+
+router.use(isAuthenticated);
 
 router.post('/post', celebrate({
   body: Joi.object().keys({
