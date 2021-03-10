@@ -1,8 +1,11 @@
 import { Request, Response } from 'express';
 
+import { celebrate, Joi } from 'celebrate';
+
 import knex from '../database/connection';
 
 class PostController{
+
   async create(request: Request, response: Response){
     const {
       title,
@@ -72,9 +75,18 @@ class PostController{
 
     const post = await knex('posts').where({id: id_post, user_id: id_user}).first();
 
+    const date_now = String(Date()).slice(0,15);
+
+    const day = date_now.slice(8,10);
+    const moth = date_now.slice(4,7);
+    const year = date_now.slice(11,15)
+
+    const date = `${moth} ${day} ${year}`;
+
     const postUpdate = {
       title: title,
-      content: content
+      content: content,
+      date_post: date
     }
 
     const updatePost = await knex('posts').where({id: id_post}).update(postUpdate);
