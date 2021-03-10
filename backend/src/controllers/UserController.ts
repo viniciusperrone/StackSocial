@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { hash, compare } from 'bcryptjs';
 
 import knex from '../database/connection';
 
@@ -10,10 +11,12 @@ class UserController{
       password
     } = request.body;
 
+    const passwordHashed = await hash(password, 8)
+
     const user = {
       username: username,
       email: email,
-      password: password
+      password: passwordHashed
     }
 
     const handleRegister = user.username && user.email && user.password ? user : "Register invalid!"
@@ -38,9 +41,19 @@ class UserController{
       password
     } = request.body;
     
-    const users = await knex('users').where({username: username, password: password})
+    const user = await knex('users').where("username", username).first()
 
-    return response.json(users);
+    if (!user){
+      return response.status(400).json({ message: 'Credentials not found!'})
+    }
+    const comparePassord = await compare(password, user.password);
+
+    const sign = comparePassord 
+    ? user 
+    : response.status(400).json({ message: 'Credentials not found.' }); 
+
+
+    return response.json(sign);
   }
 
   async getUsers(request: Request, response: Response){
