@@ -19,9 +19,19 @@ router.post('/post', celebrate({
   })
 }), postController.create);
 
-router.put('/post/update/', postController.update);
+router.put('/post/update/', celebrate({
+  body: Joi.object().keys({
+    title: Joi.string().required().min(1).max(15),
+    content: Joi.string().required().min(1).max(30)
+  })
+}), postController.update);
 
-router.put('/profile/:id', userController.update);
+router.put('/profile/:id', celebrate({
+  body: Joi.object().keys({
+    username: Joi.string().required().min(5).max(15),
+    email: Joi.string().required().email(),
+  })
+}), userController.update);
 
 router.get('/about', (req, res) => {
   return res.json({
