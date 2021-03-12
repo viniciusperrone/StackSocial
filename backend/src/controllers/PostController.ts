@@ -63,13 +63,10 @@ class PostController{
 
   async update(request: Request, response: Response){
     const {
-      id_user,
-      id_post
-    } = request.query;
-
-    const{
+      id_post,
       title,
-      content
+      content,
+      id_user
     } = request.body;
 
     const post = await knex('posts').where({id: id_post, user_id: id_user}).first();

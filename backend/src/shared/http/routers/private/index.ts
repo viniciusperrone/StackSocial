@@ -34,10 +34,11 @@ router.put('/post/update/', celebrate({
   })
 }), postController.update);
 
-router.put('/profile/:id', celebrate({
+router.('/profile', celebrate({
   body: Joi.object().keys({
     username: Joi.string().required().min(5).max(15),
     email: Joi.string().required().email(),
+
   })
 }), userController.update);
 

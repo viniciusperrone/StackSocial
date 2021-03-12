@@ -69,12 +69,9 @@ class UserController{
   }
 
   async update(request: Request, response: Response){
-    
-    const {
-      id
-    } = request.params;
 
     const {
+      id,
       username,
       email
     } = request.body;
@@ -87,7 +84,7 @@ class UserController{
     const handleUser = user.username.trim().length;
     const handleEmail = user.email.trim().length;
 
-    const updateUser = handleUser > 8 && handleEmail > 8 
+    const updateUser = handleUser >= 5 && handleEmail >= 5 
       ? await knex('users').where("id", id).update(user)
       : "Failed update";
 

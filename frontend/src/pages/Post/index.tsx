@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Background from '../../components/Background';
 import Header from '../../components/Header';
@@ -9,6 +10,7 @@ import { messages } from '../../utils/message';
 import { HeaderPost, Content, TextField } from './style';
 
 import api from '../../server/api';
+
 import { ButtonMain } from '../../components/Button/style';
 
 interface PostCreate {
@@ -17,6 +19,8 @@ interface PostCreate {
   id_user: string;
 }
 const Post: React.FC = () => {
+
+  const history = useHistory();
 
   const [post, setPost] = useState<PostCreate>({
     title: "",
@@ -27,9 +31,9 @@ const Post: React.FC = () => {
   useEffect(() => {
     const user = localStorage.getItem('user');
 
-    const userExist = user != null ? JSON.parse(user) : null;
+    const userExist = user !== null ? JSON.parse(user) : null;
 
-    const id = userExist != null ? userExist.id : null;
+    const id = userExist !== null ? userExist.id : null;
 
     return setPost({
       title: post.title,
@@ -41,7 +45,7 @@ const Post: React.FC = () => {
   const [show, setShow] = useState(false);
 
   async function handlePost(){
-    const validation = post.title.trim().length >= 1 && post.content.trim().length >= 1 && post.id_user != '';
+    const validation = post.title.trim().length >= 1 && post.content.trim().length >= 1 && post.id_user !== '';
 
     if(validation){
       
@@ -61,8 +65,8 @@ const Post: React.FC = () => {
 
       console.log(response);
 
-      if(!response){
-        console.log('fmoefme');
+      if(response){
+        history.push('/dashboard');
       }
     }
     else{
