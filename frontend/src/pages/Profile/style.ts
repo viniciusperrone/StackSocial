@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Conteiner = styled.div`
   width: 75%;
-  height: 600px;
+  height: 100%;
 
   align-self: center;
   
@@ -16,9 +16,7 @@ export const Conteiner = styled.div`
   @media only screen and (min-width: 320px) and (max-width: 568px){
     width: 100%;
     height: 100%;
-
   } 
-
 `;
 
 export const Content = styled.div`

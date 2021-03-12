@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import Background from '../../components/Background';
 import ConteinerPublic from '../../components/ConteinerPublic';
@@ -10,12 +10,19 @@ import Modal from '../../components/Modal';
 import { FormFirst, FormSecond } from './style';
 import { ButtonMain } from '../../components/Button/style';
 
+import { messages } from '../../utils/message'
+
+import api from '../../server/api';
+
 interface UserData{
   username: string;
   email: string;
   password: string;
 }
 const SignUp: React.FC = () => {
+  
+  const history = useHistory();
+  
   const space = " ";
 
   const [user, setUser] = useState<UserData>({
@@ -26,11 +33,40 @@ const SignUp: React.FC = () => {
 
   const [show, setShow] = useState(false);
 
+  const [confirm, setConfirm] = useState('');
+
   function closedModalHandler (){
     return setShow(false);
   }
 
-  console.log(user);
+  async function handleSignUp(){
+
+    if(!user.username || !user.email || !user.password || !confirm){
+      setShow(true);
+    }
+    else{
+      if(user.password === confirm){
+
+        const validation = user.username.trim().length >= 5 && user.email.trim().length >= 5 && user.password.trim().length >= 5
+      
+        if(validation){
+          const response = await api.post('/signup', {
+            username: user.username,
+            email: user.email,
+            password: user.password
+          });
+
+          if(response){
+            history.push('/');
+          }
+        }
+      }
+      else{
+        setShow(true);
+      }
+    }
+  }
+
   return(
     <>
       { show ? <div style={{
@@ -43,7 +79,7 @@ const SignUp: React.FC = () => {
       }}></div> : null}
 
       <Background justifyContent="center" alignItems="center">
-        <Modal message="Failed in compare it's not ok!" show={show} closedModalHandler={closedModalHandler}/>
+        <Modal message={messages.registerFailed} show={show} closedModalHandler={closedModalHandler}/>
 
         <ConteinerPublic width="80%" height="90%">
           <FormFirst >
@@ -81,8 +117,10 @@ const SignUp: React.FC = () => {
             <label>confirm</label>
             <Input 
               type="password"
+              value={confirm}
+              onChange={ (e: any) => setConfirm(e.target.value)}
             />
-            <ButtonMain onClick={() => setShow(true)} style={{ cursor: `pointer`}}>
+            <ButtonMain onClick={handleSignUp} style={{ cursor: `pointer`}}>
               Create
             </ButtonMain>
             <p>

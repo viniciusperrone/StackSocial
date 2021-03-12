@@ -9,10 +9,9 @@ class PostController{
   async create(request: Request, response: Response){
     const {
       title,
-      content
+      content,
+      id_user
     } = request.body;
-
-    const { id_user } = request.query;
 
     const handleBody = title && content && id_user ? "Ok" : "Imcoplete"
 
@@ -57,7 +56,7 @@ class PostController{
   }
 
   async getPost(request: Request, response: Response){
-    const posts = await knex('posts').select(["title","content","user_name","date_post"]);
+    const posts = await knex('posts').select("*");
 
     return response.json(posts); 
   }

@@ -4,7 +4,9 @@ import User from '../../assets/images/profile.svg';
 
 import { Card, Profile, Content, Header, Body } from './style';
 
-const PostCard: React.FC = () => {
+import { Post } from '../../pages/Dashboard';
+
+const PostCard: React.FC<Post> = ( props ) => {
   return( 
     <Card>
       <Profile>
@@ -12,12 +14,12 @@ const PostCard: React.FC = () => {
       </Profile>
       <Content>
         <Header>
-          <h1><b>Vinicius Perrone</b></h1>
-          <p>Jan 01 2021</p>
+          <h1><b>{props.user_name}</b></h1>
+          <p>{props.date_post}</p>
         </Header>
         <Body>
-          <h1><b>Title</b></h1>
-          <p>Content</p>
+          <h1><b>{props.title}</b></h1>
+          <p>{props.content}</p>
         </Body>
       </Content>
     </Card>

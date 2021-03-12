@@ -12,8 +12,8 @@ export const HeaderConteiner = styled.header`
   align-items: center;
   justify-content:space-around;
 
-  h1{
-    a{
+  h1 {
+    a {
       text-decoration: none;
       color: #fff;
       &:hover{

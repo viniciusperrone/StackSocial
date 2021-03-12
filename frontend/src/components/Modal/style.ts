@@ -8,6 +8,13 @@ export const Wrapper = styled.div`
   z-index: 10;
   border: none;
   border-radius: 15px;
+
+  @media screen and (min-width: 320px) and (max-width: 568px){
+  
+  width: 70%;
+  
+  }
+
 `;
 
 export const Header = styled.header`
@@ -50,6 +57,12 @@ export const Body = styled.div`
     margin: 1rem 0 2rem 0;
   }
 
+  @media screen and (min-width: 320px) and (max-width: 568px){
+    p{
+      font: 400 2rem Skranji;
+    }
+  }
+
 `;
 export const Footer = styled.footer`
   height: 80px;
@@ -72,5 +85,10 @@ export const Footer = styled.footer`
     border: none;
     outline: none;
     cursor: pointer;
+  }
+  @media screen and (min-width: 320px) and (max-width: 568px){
+    button{
+      width: 80%;
+    }
   }
 `;

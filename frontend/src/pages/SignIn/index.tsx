@@ -31,6 +31,7 @@ const SignIn: React.FC = () => {
   const history = useHistory();
 
   const [show, setShow] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const [user, setUser] = useState<UserData>({
     username: "",
@@ -43,32 +44,38 @@ const SignIn: React.FC = () => {
 
   async function handleSignIn (){
     const validation = 
-      user.username.trim().length >= 5 && user.password.trim().length >= 5 
-    
-    if(validation){
-      console.log(user);
+      user.username.trim().length >= 5 && user.password.trim().length >= 5;
+      
+    if (validation) {
       const response = await api.post<SignInResponse>('/', {
         username: user.username,
         password: user.password
       });
 
-      console.log(response);
-
-      if(response){
+      if (response) {
         localStorage.setItem('user', JSON.stringify(response.data.user));
         localStorage.setItem('token', response.data.token);
+        
         api.defaults.headers.authorization = `Bearer ${response.data.token}`;
+        
         history.push('/dashboard');
-
       }
-    } 
+      
+    } else{
+        setShow(true);
+        setModal(true);
+        console.log(modal);
+        console.log(show);
+    }
 
   }
 
+  console.log(modal);
+  console.log(show);
   return(
     <>
       <div>
-      { show ? <div style={{
+      { show && modal ? <div style={{
           background: `rgba(63,61,61,0.8)`,
           height: `100%`,
           width: `100%`,
@@ -77,9 +84,10 @@ const SignIn: React.FC = () => {
           transition: `all 1.3s`,
         }}></div> : null}
       </div>
-
+      
       <Background justifyContent="center" alignItems="center">
 
+        <Modal message={messages.signFailed} show={show} closedModalHandler={closedModalHandler}/>
 
         <ConteinerPublic width="80%" height="75%">
           <FormFirst >
@@ -104,7 +112,7 @@ const SignIn: React.FC = () => {
               password: e.target.value
             })}
           />
-            <ButtonMain onClick={handleSignIn}>
+            <ButtonMain onClick={handleSignIn} type="button">
               Login
             </ButtonMain>
             

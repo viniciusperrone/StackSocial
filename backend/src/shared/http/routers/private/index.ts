@@ -22,7 +22,8 @@ router.get('/dashboard', postController.getPost);
 router.post('/post', celebrate({
   body: Joi.object().keys({
     title: Joi.string().required().min(1).max(15),
-    content: Joi.string().required().min(1).max(30)
+    content: Joi.string().required().min(1).max(30),
+    id_user: Joi.string().required().min(1)
   })
 }), postController.create);
 
