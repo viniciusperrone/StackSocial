@@ -29,7 +29,7 @@ const Profile: React.FC = () => {
               <Input type="text"/>
               <h1>Email</h1>
               <Input type="text"/>
-              <Button>Update</Button>
+              <Button handleModal={() => null}>Update</Button>
             </BodyContent>
           </Content>
         </Conteiner>

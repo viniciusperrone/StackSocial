@@ -1,13 +1,8 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 
-import { InputMain} from './style';
+import { InputMain } from './style';
+type InputProps = InputHTMLAttributes<HTMLInputElement>
 
-interface InputProps{
-  type: string;
-}
-const Input: React.FC<InputProps> = ( props ) => 
-  <InputMain 
-    type={props.type}
-  />
+const Input: React.FC<InputProps> = ( {...rest } ) => <InputMain {...rest}/>
 
 export default Input;

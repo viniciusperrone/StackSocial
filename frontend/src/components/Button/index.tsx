@@ -2,6 +2,11 @@ import React from 'react';
 
 import { ButtonMain } from './style';
 
-const Button: React.FC = ( { children } ) => <ButtonMain>{ children }</ButtonMain>
+interface ButtonProps{
+  handleModal: Function;
+}
+
+const Button: React.FC<ButtonProps> = ( { handleModal, children } ) => 
+  <ButtonMain>{ children }</ButtonMain>
 
 export default Button;

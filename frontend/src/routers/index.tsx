@@ -9,6 +9,7 @@ import About from '../pages/About';
 import Post from '../pages/Post';
 import Profile from '../pages/Profile';
 import Logout from '../pages/Logout';
+import Test from '../pages/Test';
 
 const Routers: React.FC = () => {
   return(
@@ -20,6 +21,7 @@ const Routers: React.FC = () => {
       <Route path="/profile" component={Profile}/>
       <Route path="/about" component={About}/>
       <Route path="/logout" component={Logout}/>
+      <Route path="/test" component={Test}/>
     </BrowserRouter>
   )
 }

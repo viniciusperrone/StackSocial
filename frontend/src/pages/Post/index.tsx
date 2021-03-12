@@ -20,7 +20,7 @@ const Post: React.FC = () => {
           <Input type="text"/>
           <h1>Content: </h1>
           <TextField />
-          <Button>Post</Button>
+          <Button handleModal={() => null}>Post</Button>
         </Content>
       </Background>
     </>

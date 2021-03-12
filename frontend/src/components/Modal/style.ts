@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
   background: #fff;
   width: 500px;
   margin: 4rem auto;
+  position: absolute;
+  z-index: 10;
+  border: none;
+  border-radius: 15px;
 `;
 
 export const Header = styled.header`
@@ -13,14 +17,15 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   border-radius: 15px 15px 0 0;
+  border: none;
   p{
-    font: 400 2rem Rambla;
+    font: 400 2.25rem Rambla;
     color: #fff;
     margin-left: 70px;
   }
 
   span{
-    font: 400 2rem Rambla;
+    font: 400 2.25rem Rambla;
     color: #fff;
     cursor: pointer;
     &:hover{
@@ -58,7 +63,8 @@ export const Footer = styled.footer`
     margin-left: -10px;
     height: 6vh;
     width: 14vw;
-    background-color: var(--color-secundary-button);
+    background-color: #D54444;
+    color: #fff;
   
     justify-content: center;
     text-align: center;
