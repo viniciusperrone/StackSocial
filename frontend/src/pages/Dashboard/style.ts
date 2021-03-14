@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const Conteiner = styled.div`
-  width: 75%;
+  min-width: 75%;
   height: 100%;
+  max-height: inherit;
+
+  position: relative;
 
   align-self: center;
   

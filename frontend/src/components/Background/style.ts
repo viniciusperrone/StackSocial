@@ -6,7 +6,12 @@ interface BackgroundConteinerProps{
 }
 export const BackgroundConteiner = styled.div<BackgroundConteinerProps>`
   height: 100%;
+  width: 100vw;
+
+  max-height: inherit;
   background-color: var(--color-background);
+
+  
 
   display: flex;
   flex-direction: column;

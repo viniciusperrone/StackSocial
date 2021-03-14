@@ -14,6 +14,7 @@ export const Card = styled.div`
 
   @media only screen and (min-width: 320px) and (max-width: 568px) {
     width: 95%;
+    max-width: 256px;
     height: 60px;
 
     div > img {

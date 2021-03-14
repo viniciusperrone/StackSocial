@@ -11,7 +11,7 @@ import About from '../pages/About';
 import Post from '../pages/Post';
 import Profile from '../pages/Profile';
 import Logout from '../pages/Logout';
-import Test from '../pages/Test';
+import Update from '../pages/Update';
 
 const Routers: React.FC = () => {
   return(
@@ -23,7 +23,7 @@ const Routers: React.FC = () => {
       <Route path="/post" component={Post} isPrivate/>
       <Route path="/profile" component={Profile} isPrivate/>
       <Route path="/about" component={About} isPrivate/>
-      <Route path="/test" component={Test} isPrivate/>
+      <Route path="/update" component={Update} isPrivate/>
     </Switch>
   )
 }

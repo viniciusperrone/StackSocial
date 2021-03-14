@@ -5,7 +5,6 @@ import Background from '../../components/Background';
 import ConteinerPublic from '../../components/ConteinerPublic';
 import ConteinerImage from '../../components/ConteinerImage';
 import Input from '../../components/Input';
-import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 
 import { messages } from '../../utils/message'
@@ -59,19 +58,17 @@ const SignIn: React.FC = () => {
         api.defaults.headers.authorization = `Bearer ${response.data.token}`;
         
         history.push('/dashboard');
+      } else{
+        setShow(true);
+        setModal(true);
       }
       
     } else{
         setShow(true);
         setModal(true);
-        console.log(modal);
-        console.log(show);
     }
 
   }
-
-  console.log(modal);
-  console.log(show);
   return(
     <>
       <div>

@@ -63,10 +63,11 @@ const Post: React.FC = () => {
         id_user: post.id_user
       });
 
-      console.log(response);
-
       if(response){
         history.push('/dashboard');
+      }
+      else{
+        console.log('Error');
       }
     }
     else{

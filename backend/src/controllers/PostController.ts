@@ -61,12 +61,13 @@ class PostController{
     return response.json(posts); 
   }
 
-  async update(request: Request, response: Response){
+  async update(request: Request, response: Response){  
+    
     const {
       id_post,
+      id_user,
       title,
-      content,
-      id_user
+      content
     } = request.body;
 
     const post = await knex('posts').where({id: id_post, user_id: id_user}).first();
@@ -94,10 +95,10 @@ class PostController{
 
   async drop(request: Request, response: Response){
     const {
-      id
-    } = request.body;
+      id_post
+    } = request.params;
 
-    const deletePost = await knex('posts').where({id: id}).delete();
+    const deletePost = await knex('posts').where({id: id_post}).delete();
 
     response.json(deletePost);
   }

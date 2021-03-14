@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import Background from '../../components/Background';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
-import Button from '../../components/Button';
 
 import UserProfile from '../../assets/images/profile.svg';
 import { Conteiner, Content, HeaderContent, BodyContent } from './style';
@@ -16,9 +15,19 @@ interface ProfileUpdate{
   username: string;
   email: string;
 }
+
+interface ProfileText{
+  name: string;
+  email: string;
+}
 const Profile: React.FC = () => {
 
   const history = useHistory();
+
+  const[profile, setProfile] = useState<ProfileText>({
+    name: "",
+    email: ""
+  });
 
   const [update, setUpdate] = useState<ProfileUpdate>({
     username: "",
@@ -34,6 +43,11 @@ const Profile: React.FC = () => {
       username: user.username,
       email: user.email
     });
+
+    setProfile({
+      name: user.username,
+      email: user.email
+    })
 
 
   }, []);
@@ -51,7 +65,7 @@ const Profile: React.FC = () => {
         id_user,
         ...update
       });
-
+  
       const response = await api.put('/profile', {
         id: id_user,
         username: update.username,
@@ -73,8 +87,8 @@ const Profile: React.FC = () => {
             <HeaderContent>
               <img src={UserProfile} alt=""/>
               <div>
-                <h1><b>{update.username}</b></h1>
-                <p>{update.email}</p>
+                <h1><b>{profile.name}</b></h1>
+                <p>{profile.email}</p>
               </div>
             </HeaderContent>
             <BodyContent>
@@ -98,7 +112,7 @@ const Profile: React.FC = () => {
                   email: e.target.value
                 })}
               />
-              <ButtonMain onClick={updateProfile}>Update</ButtonMain>
+              <ButtonMain onClick={updateProfile} style={{cursor: `pointer`}}>Update</ButtonMain>
             </BodyContent>
           </Content>
         </Conteiner>
