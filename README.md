@@ -9,7 +9,7 @@
 
 # 💻 Technologies 
 
-<h2> The project was developed using the following technologies:
+<h2> The project was developed using the following technologies:</h2>
 
 <ul>
     <li><p></b>ReactJS</b></p></li>
