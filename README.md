@@ -5,16 +5,16 @@
 
 # 📄About
 
-<h2> The <b>Stack Social</b> is an application for sharing things or experience about programming. You just need to register your account and create a post.</h2>
+<p> The <b>Stack Social</b> is an application for sharing things or experience about programming. You just need to register your account and create a post.</p>
 
 # 💻 Technologies 
 
 <h2> The project was developed using the following technologies:
 
 <ul>
-    <li><h3></b>ReactJS</b></h3></li>
-    <li><h3></b>NodeJS</b></h3></li>
-    <li><h3></b>Typescript</b></h3></li>
+    <li><p></b>ReactJS</b></p></li>
+    <li><p></b>NodeJS</b></p></li>
+    <li><p></b>Typescript</b></p></li>
 </ul>
 
 # ✔ How to use the project
