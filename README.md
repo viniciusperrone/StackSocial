@@ -3,11 +3,11 @@
     <p>Stack Social</p>
 </h1>
 
-# About
+# 📄About
 
 <h2> The <b>Stack Social</b> is an application for sharing things or experience about programming. You just need to register your account and create a post.</h2>
 
-# Technologies 
+# 💻 Technologies 
 
 <h2> The project was developed using the following technologies:
 
@@ -17,7 +17,7 @@
     <li><h3></b>Typescript</b></h3></li>
 </ul>
 
-# How to use the project
+# ✔ How to use the project
 
 ````
 # In the backend folder
