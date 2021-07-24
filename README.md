@@ -3,7 +3,7 @@
     <p>Stack Social</p>
 </h1>
 
-# 📄About
+# 📄 About
 
 <p> The <b>Stack Social</b> is an application for sharing things or experience about programming. You just need to register your account and create a post.</p>
 
