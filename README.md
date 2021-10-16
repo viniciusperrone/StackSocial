@@ -20,7 +20,7 @@
 # ✔ How to use the project
 
 ````
-# In the backend folder
+# In the frontend folder
 
 ## Installing the dependencies
 
