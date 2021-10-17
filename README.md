@@ -20,7 +20,7 @@
 # ✔ How to use the project
 
 ````
-# In the frontend folder
+# In the backend folder
 
 ## Installing the dependencies
 
@@ -34,7 +34,7 @@ $ yarn knex:migration
 
 $ yarn dev:server
 
-# In the backend folder
+# In the frontend folder
 
 ## Installing the dependencies
 
